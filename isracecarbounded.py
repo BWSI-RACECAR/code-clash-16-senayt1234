@@ -56,36 +56,15 @@ class Solution:
     def isracecarbounded(self, instructions):
             #type instructions: string
             #return type: boolean
-            x = 0
-            y = 0
             initial_pos=[0,0]
-            cur_pos=[x,y]
+            cur_pos=[0,0]
             #direction= ['S':0,'W':1,'N':2,'E':3] Reference for cur_dir (current direction)
             cur_dir=2
-            #TODO: Write code below to returnn a boolean value with the solution to the prompt.
-            index=0
-            instructions = instructions+instructions+instructions+instructions
-
-            while len(instructions)>index:
-                 if instructions[index] == "G":
-                      if cur_dir==2:
-                           y = y+1
-                      if cur_dir==1:
-                           x=x-1
-                      if cur_dir==0:
-                           y=y-1
-                      if cur_dir==3:
-                           x=x+1
-                 if instructions[index] == "L":
-                       cur_dir= cur_dir-1
-                 if instructions[index] == "R":
-                       cur_dir= cur_dir+1
-                 index = index+1
             
-            if x == 0 and y == 0:
-                 return True
-            else:
-                 return False
+            #TODO: Write code below to returnn a boolean value with the solution to the prompt.
+            return not instructions.count('R')==instructions.count('L')
+            
+            
         
 def main():
     input1=input()
